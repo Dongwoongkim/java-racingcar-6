@@ -15,6 +15,8 @@ public class InputConverter {
     }
 
     public static List<String> stringToListByDelimiter(String carNames) {
-        return Arrays.stream(carNames.split(DELIMITER)).toList();
+        return Arrays.stream(carNames.split(DELIMITER))
+                .map(String::trim)
+                .toList();
     }
 }
