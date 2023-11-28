@@ -22,11 +22,11 @@ public class Car {
         distance.addByCondition(new RandomNumberGenerator());
     }
 
-    public Name getName() {
-        return name;
+    public String getName() {
+        return name.get();
     }
 
-    public Distance getDistance() {
-        return distance;
+    public Integer getDistance() {
+        return distance.get();
     }
 }

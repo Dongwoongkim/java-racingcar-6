@@ -1,5 +1,6 @@
 package racingcar.model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -34,6 +35,28 @@ public class Cars {
 
     public void playEachSession() {
         cars.forEach(car -> car.play());
+    }
+
+    public List<String> getWinnerNames() {
+        int maxDistance = getMaxDistance();
+        return findWinner(maxDistance);
+    }
+
+    private List<String> findWinner(int maxDistance) {
+        List<String> winners = new ArrayList<>();
+        cars.forEach(car -> {
+            if (car.getDistance() == maxDistance) {
+                winners.add(car.getName());
+            }
+        });
+        return winners;
+    }
+
+    private int getMaxDistance() {
+        return cars.stream()
+                .mapToInt(car -> car.getDistance())
+                .max()
+                .orElse(0);
     }
 
     public List<Car> getCars() {

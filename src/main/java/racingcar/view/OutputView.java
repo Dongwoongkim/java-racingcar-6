@@ -1,11 +1,13 @@
 package racingcar.view;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import racingcar.dto.CarDto;
 
 public class OutputView {
 
     public void printResultMessage() {
+        System.out.println();
         System.out.println("실행 결과");
     }
 
@@ -15,7 +17,9 @@ public class OutputView {
         System.out.println();
     }
 
-    public void printWinners() {
-        System.out.print("최종 우승자 : ");
+    public void printWinners(List<String> winnerNames) {
+        String winners = winnerNames.stream()
+                .collect(Collectors.joining(", "));
+        System.out.print("최종 우승자 : " + winners);
     }
 }

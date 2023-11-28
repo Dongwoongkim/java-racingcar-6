@@ -1,5 +1,6 @@
 package racingcar.controller;
 
+import java.util.List;
 import racingcar.dto.CarDto;
 import racingcar.model.Cars;
 import racingcar.model.vo.TrialNumber;
@@ -26,7 +27,8 @@ public class RacingController {
     }
 
     private void showWinners(Cars cars) {
-        // TODO : 우승자 출력
+        List<String> winners = cars.getWinnerNames();
+        outputView.printWinners(winners);
     }
 
     private void startRacing(TrialNumber trialNumber, Cars cars) {
