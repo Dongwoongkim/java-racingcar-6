@@ -42,7 +42,7 @@ public class RacingController {
     private Cars initCars() {
         String carNames = inputView.inputCarNames();
         InputValidator.validateCarNames(carNames);
-        return Cars.create(InputConverter.stringToListByDelimiter(carNames));
+        return Cars.createWithNames(InputConverter.stringToListByDelimiter(carNames));
     }
 
     private TrialNumber initTrialNumber() {

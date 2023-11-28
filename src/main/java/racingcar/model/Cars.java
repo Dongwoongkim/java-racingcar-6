@@ -16,10 +16,10 @@ public class Cars {
         this.cars = cars;
     }
 
-    public static Cars create(final List<String> names) {
+    public static Cars createWithNames(final List<String> names) {
         validate(names);
         List<Car> cars = names.stream()
-                .map(name -> Car.create(name))
+                .map(name -> Car.createWithName(name))
                 .collect(Collectors.toList());
         return new Cars(cars);
     }
