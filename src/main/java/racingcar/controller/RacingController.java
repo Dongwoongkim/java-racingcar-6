@@ -20,6 +20,13 @@ public class RacingController {
     public void run() {
         Cars cars = initCars();
         TrialNumber trialNumber = initTrialNumber();
+        startRacing(trialNumber, cars);
+    }
+
+    private void startRacing(TrialNumber trialNumber, Cars cars) {
+        for (int count = 0; count < trialNumber.getNumber(); count++) {
+            // TODO : 자동차 움직이는 기능 구현
+        }
     }
 
     private Cars initCars() {

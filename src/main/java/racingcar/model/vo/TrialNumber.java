@@ -20,4 +20,8 @@ public class TrialNumber {
     private boolean isLessThanMinTrialNumber(Integer number) {
         return number < MIN_TRIAL_NUMBER;
     }
+    
+    public Integer getNumber() {
+        return number;
+    }
 }
