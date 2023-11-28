@@ -1,12 +1,13 @@
 package racingcar.model;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Cars {
+
+    private static final Integer START_POINT = 0;
 
     private final List<Car> cars;
 
@@ -43,20 +44,17 @@ public class Cars {
     }
 
     private List<String> findWinner(final int maxDistance) {
-        List<String> winners = new ArrayList<>();
-        cars.forEach(car -> {
-            if (car.getDistance() == maxDistance) {
-                winners.add(car.getName());
-            }
-        });
-        return winners;
+        return cars.stream()
+                .filter(car -> car.getDistance() == maxDistance)
+                .map(Car::getName)
+                .toList();
     }
 
     private int getMaxDistance() {
         return cars.stream()
                 .mapToInt(car -> car.getDistance())
                 .max()
-                .orElse(0);
+                .orElse(START_POINT);
     }
 
     public List<Car> getCars() {
