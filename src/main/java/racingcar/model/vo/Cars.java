@@ -7,18 +7,18 @@ import java.util.stream.Collectors;
 
 public class Cars {
 
-    private final List<Name> carNames;
+    private final List<Car> cars;
 
-    private Cars(List<Name> carNames) {
-        this.carNames = carNames;
+    private Cars(List<Car> cars) {
+        this.cars = cars;
     }
 
     public static Cars create(List<String> names) {
         validate(names);
-        List<Name> carNames = names.stream()
-                .map(name -> Name.create(name))
+        List<Car> cars = names.stream()
+                .map(name -> Car.create(name))
                 .collect(Collectors.toList());
-        return new Cars(carNames);
+        return new Cars(cars);
     }
 
     private static void validate(List<String> names) {
@@ -30,5 +30,13 @@ public class Cars {
     private static boolean duplicateNameContains(List<String> names) {
         Set<String> distinctNames = new HashSet<>(names);
         return names.size() != distinctNames.size();
+    }
+
+    public void playEachSession() {
+        cars.forEach(car -> car.play());
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 }

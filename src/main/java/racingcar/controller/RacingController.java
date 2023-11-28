@@ -1,5 +1,6 @@
 package racingcar.controller;
 
+import racingcar.dto.CarDto;
 import racingcar.model.vo.Cars;
 import racingcar.model.vo.TrialNumber;
 import racingcar.util.InputConverter;
@@ -21,11 +22,18 @@ public class RacingController {
         Cars cars = initCars();
         TrialNumber trialNumber = initTrialNumber();
         startRacing(trialNumber, cars);
+        showWinners(cars);
+    }
+
+    private void showWinners(Cars cars) {
+        // TODO : 우승자 출력
     }
 
     private void startRacing(TrialNumber trialNumber, Cars cars) {
+        outputView.printResultMessage();
         for (int count = 0; count < trialNumber.getNumber(); count++) {
-            // TODO : 자동차 움직이는 기능 구현
+            cars.playEachSession();
+            outputView.printEachResult(CarDto.createCarsDto(cars));
         }
     }
 
