@@ -18,8 +18,8 @@ public class Car {
         return new Car(name);
     }
 
-    public void play() {
-        distance.addByCondition(new RandomNumberGenerator());
+    public void updateDistance() {
+        distance.addIfOverThreshold(new RandomNumberGenerator());
     }
 
     public String getName() {

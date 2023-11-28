@@ -13,7 +13,7 @@ public class Distance {
         return distance;
     }
 
-    public void addByCondition(final NumberGenerator numberGenerator) {
+    public void addIfOverThreshold(final NumberGenerator numberGenerator) {
         if (numberGenerator.pickNumber() >= THRESHOLD) {
             this.distance++;
         }

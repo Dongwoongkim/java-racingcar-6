@@ -24,18 +24,18 @@ public class Cars {
     }
 
     private static void validate(final List<String> names) {
-        if (duplicateNameContains(names)) {
+        if (containDuplicateName(names)) {
             throw new IllegalArgumentException();
         }
     }
 
-    private static boolean duplicateNameContains(final List<String> names) {
+    private static boolean containDuplicateName(final List<String> names) {
         Set<String> distinctNames = new HashSet<>(names);
         return names.size() != distinctNames.size();
     }
 
     public void playEachSession() {
-        cars.forEach(car -> car.play());
+        cars.forEach(car -> car.updateDistance());
     }
 
     public List<String> getWinnerNames() {
@@ -45,7 +45,7 @@ public class Cars {
 
     private List<String> findWinner(final int maxDistance) {
         return cars.stream()
-                .filter(car -> car.getDistance() == maxDistance)
+                .filter(car -> car.getDistance().equals(maxDistance))
                 .map(Car::getName)
                 .toList();
     }
