@@ -21,7 +21,7 @@ public class Name {
     }
 
     private static boolean isOverMaxLength(final String name) {
-        return name.length() >= MAX_LENGTH;
+        return name.length() > MAX_LENGTH;
     }
 
     public String get() {
