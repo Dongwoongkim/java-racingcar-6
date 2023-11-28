@@ -19,7 +19,7 @@ public class Car {
     }
 
     public void play() {
-        // TODO : 난수 생성기에 의해 출발/정지 기능 구현
+        distance.addByCondition(new RandomNumberGenerator());
     }
 
     public Name getName() {
