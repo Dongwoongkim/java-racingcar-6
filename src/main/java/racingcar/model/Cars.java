@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import racingcar.exception.DuplicateCarNameException;
 
 public class Cars {
 
@@ -25,7 +26,7 @@ public class Cars {
 
     private static void validate(final List<String> names) {
         if (containDuplicateName(names)) {
-            throw new IllegalArgumentException();
+            throw new DuplicateCarNameException();
         }
     }
 

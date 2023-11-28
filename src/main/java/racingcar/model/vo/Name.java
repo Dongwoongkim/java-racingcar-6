@@ -1,5 +1,8 @@
 package racingcar.model.vo;
 
+import racingcar.exception.EmptyNameException;
+import racingcar.exception.OverMaxLengthNameException;
+
 public class Name {
 
     private static final Integer MAX_LENGTH = 5;
@@ -13,10 +16,10 @@ public class Name {
 
     private static void validate(final String name) {
         if (name.isEmpty()) {
-            throw new IllegalArgumentException();
+            throw new EmptyNameException();
         }
         if (isOverMaxLength(name)) {
-            throw new IllegalArgumentException();
+            throw new OverMaxLengthNameException(MAX_LENGTH);
         }
     }
 

@@ -1,5 +1,7 @@
 package racingcar.model.vo;
 
+import racingcar.exception.LessThanMinTrialNumberException;
+
 public class TrialNumber {
 
     private static final Integer MIN_TRIAL_NUMBER = 1;
@@ -13,7 +15,7 @@ public class TrialNumber {
 
     private void validate(final Integer number) {
         if (isLessThanMinTrialNumber(number)) {
-            throw new IllegalArgumentException();
+            throw new LessThanMinTrialNumberException(MIN_TRIAL_NUMBER);
         }
     }
 

@@ -1,5 +1,9 @@
 package racingcar.util;
 
+import racingcar.exception.EmptyCarNamesInputException;
+import racingcar.exception.EmptyTrialNumberInputException;
+import racingcar.exception.NonNumericTrialNumberInputException;
+
 public class InputValidator {
 
     private InputValidator() {
@@ -7,16 +11,16 @@ public class InputValidator {
 
     public static void validateCarNames(final String carNames) {
         if (carNames.isEmpty()) {
-            throw new IllegalArgumentException();
+            throw new EmptyCarNamesInputException();
         }
     }
 
     public static void validateTrialNumber(final String trialNumber) {
         if (trialNumber.isEmpty()) {
-            throw new IllegalArgumentException();
+            throw new EmptyTrialNumberInputException();
         }
         if (!isNumeric(trialNumber)) {
-            throw new IllegalArgumentException();
+            throw new NonNumericTrialNumberInputException();
         }
     }
 
