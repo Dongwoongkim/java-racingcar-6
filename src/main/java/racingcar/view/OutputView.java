@@ -11,13 +11,13 @@ public class OutputView {
         System.out.println("실행 결과");
     }
 
-    public void printEachResult(List<CarDto> carsDto) {
+    public void printEachResult(final List<CarDto> carsDto) {
         carsDto.forEach(carDto ->
                 System.out.println(carDto.getName() + " : " + "-".repeat(carDto.getDistance())));
         System.out.println();
     }
 
-    public void printWinners(List<String> winnerNames) {
+    public void printWinners(final List<String> winnerNames) {
         String winners = winnerNames.stream()
                 .collect(Collectors.joining(", "));
         System.out.print("최종 우승자 : " + winners);

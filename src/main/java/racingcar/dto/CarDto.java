@@ -9,19 +9,19 @@ public class CarDto {
     private String name;
     private Integer distance;
 
-    private CarDto(String name, Integer distance) {
+    private CarDto(final String name, final Integer distance) {
         this.name = name;
         this.distance = distance;
     }
 
-    public static List<CarDto> createCarsDto(Cars cars) {
+    public static List<CarDto> createCarsDto(final Cars cars) {
         return cars.getCars()
                 .stream()
                 .map(car -> CarDto.create(car.getName(), car.getDistance()))
                 .collect(Collectors.toList());
     }
 
-    public static CarDto create(String name, Integer distance) {
+    public static CarDto create(final String name, final Integer distance) {
         return new CarDto(name, distance);
     }
 

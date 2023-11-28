@@ -10,11 +10,11 @@ public class InputConverter {
     private InputConverter() {
     }
 
-    public static Integer stringToInteger(String input) {
+    public static Integer stringToInteger(final String input) {
         return Integer.valueOf(input);
     }
 
-    public static List<String> stringToListByDelimiter(String carNames) {
+    public static List<String> stringToListByDelimiter(final String carNames) {
         return Arrays.stream(carNames.split(DELIMITER))
                 .map(String::trim)
                 .toList();

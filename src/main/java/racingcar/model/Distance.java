@@ -5,7 +5,7 @@ public class Distance {
     private static final Integer THRESHOLD = 4;
     private Integer distance;
 
-    public Distance(Integer distance) {
+    public Distance(final Integer distance) {
         this.distance = distance;
     }
 

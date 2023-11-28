@@ -10,11 +10,11 @@ public class Cars {
 
     private final List<Car> cars;
 
-    private Cars(List<Car> cars) {
+    private Cars(final List<Car> cars) {
         this.cars = cars;
     }
 
-    public static Cars create(List<String> names) {
+    public static Cars create(final List<String> names) {
         validate(names);
         List<Car> cars = names.stream()
                 .map(name -> Car.create(name))
@@ -22,13 +22,13 @@ public class Cars {
         return new Cars(cars);
     }
 
-    private static void validate(List<String> names) {
+    private static void validate(final List<String> names) {
         if (duplicateNameContains(names)) {
             throw new IllegalArgumentException();
         }
     }
 
-    private static boolean duplicateNameContains(List<String> names) {
+    private static boolean duplicateNameContains(final List<String> names) {
         Set<String> distinctNames = new HashSet<>(names);
         return names.size() != distinctNames.size();
     }
@@ -42,7 +42,7 @@ public class Cars {
         return findWinner(maxDistance);
     }
 
-    private List<String> findWinner(int maxDistance) {
+    private List<String> findWinner(final int maxDistance) {
         List<String> winners = new ArrayList<>();
         cars.forEach(car -> {
             if (car.getDistance() == maxDistance) {

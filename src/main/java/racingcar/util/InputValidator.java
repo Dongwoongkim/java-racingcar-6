@@ -5,13 +5,13 @@ public class InputValidator {
     private InputValidator() {
     }
 
-    public static void validateCarNames(String carNames) {
+    public static void validateCarNames(final String carNames) {
         if (carNames.isEmpty()) {
             throw new IllegalArgumentException();
         }
     }
 
-    public static void validateTrialNumber(String trialNumber) {
+    public static void validateTrialNumber(final String trialNumber) {
         if (trialNumber.isEmpty()) {
             throw new IllegalArgumentException();
         }
@@ -20,7 +20,7 @@ public class InputValidator {
         }
     }
 
-    private static boolean isNumeric(String trialNumber) {
+    private static boolean isNumeric(final String trialNumber) {
         try {
             Integer.valueOf(trialNumber);
             return true;

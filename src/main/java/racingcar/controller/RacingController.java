@@ -14,7 +14,7 @@ public class RacingController {
     private final InputView inputView;
     private final OutputView outputView;
 
-    public RacingController(InputView inputView, OutputView outputView) {
+    public RacingController(final InputView inputView, final OutputView outputView) {
         this.inputView = inputView;
         this.outputView = outputView;
     }
@@ -26,12 +26,12 @@ public class RacingController {
         showWinners(cars);
     }
 
-    private void showWinners(Cars cars) {
+    private void showWinners(final Cars cars) {
         List<String> winners = cars.getWinnerNames();
         outputView.printWinners(winners);
     }
 
-    private void startRacing(TrialNumber trialNumber, Cars cars) {
+    private void startRacing(final TrialNumber trialNumber, final Cars cars) {
         outputView.printResultMessage();
         for (int count = 0; count < trialNumber.getNumber(); count++) {
             cars.playEachSession();

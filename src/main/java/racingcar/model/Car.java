@@ -9,12 +9,12 @@ public class Car {
     private final Name name;
     private Distance distance;
 
-    private Car(String name) {
+    private Car(final String name) {
         this.name = new Name(name);
         this.distance = new Distance(START_POINT);
     }
 
-    public static Car create(String name) {
+    public static Car create(final String name) {
         return new Car(name);
     }
 

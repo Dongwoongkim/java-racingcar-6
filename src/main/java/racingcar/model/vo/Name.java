@@ -6,12 +6,12 @@ public class Name {
 
     private final String name;
 
-    public Name(String name) {
+    public Name(final String name) {
         validate(name);
         this.name = name;
     }
 
-    private static void validate(String name) {
+    private static void validate(final String name) {
         if (name.isEmpty()) {
             throw new IllegalArgumentException();
         }
@@ -20,7 +20,7 @@ public class Name {
         }
     }
 
-    private static boolean isOverMaxLength(String name) {
+    private static boolean isOverMaxLength(final String name) {
         return name.length() >= MAX_LENGTH;
     }
 
