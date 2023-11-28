@@ -1,7 +1,6 @@
 package racingcar.dto;
 
 import java.util.List;
-import java.util.stream.Collectors;
 import racingcar.model.Cars;
 
 public class CarDto {
@@ -18,7 +17,7 @@ public class CarDto {
         return cars.getCars()
                 .stream()
                 .map(car -> CarDto.create(car.getName(), car.getDistance()))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public static CarDto create(final String name, final Integer distance) {
