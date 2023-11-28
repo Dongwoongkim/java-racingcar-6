@@ -1,7 +1,7 @@
 package racingcar.controller;
 
 import racingcar.dto.CarDto;
-import racingcar.model.vo.Cars;
+import racingcar.model.Cars;
 import racingcar.model.vo.TrialNumber;
 import racingcar.util.InputConverter;
 import racingcar.util.InputValidator;

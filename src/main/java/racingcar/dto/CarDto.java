@@ -2,7 +2,9 @@ package racingcar.dto;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import racingcar.model.vo.Cars;
+import racingcar.model.Cars;
+import racingcar.model.Distance;
+import racingcar.model.vo.Name;
 
 public class CarDto {
 
@@ -21,8 +23,8 @@ public class CarDto {
                 .collect(Collectors.toList());
     }
 
-    public static CarDto create(String name, Integer distance) {
-        return new CarDto(name, distance);
+    public static CarDto create(Name name, Distance distance) {
+        return new CarDto(name.get(), distance.get());
     }
 
     public String getName() {
